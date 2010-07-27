@@ -25,6 +25,25 @@ Default: ``None``
 
 Any requests from users in this list will be ignored.
 
+``REQUEST_ALLOW_PATHS``
+===========================
+
+Default: ``None``
+
+Any requests which doesn't match these paths will be ignored. This setting should be a tuple filled with regex paths.
+
+.. warning::
+
+    REQUEST_ALLOW_PATHS is checked **before** REQUEST_IGNORE_PATHS.
+
+Example:
+
+.. code-block:: python
+
+    REQUEST_ALLOW_PATHS = (
+        r'^api/',
+    )
+
 ``REQUEST_IGNORE_PATHS``
 ===========================
 
