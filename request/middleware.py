@@ -9,7 +9,7 @@ class RequestMiddleware(object):
         if response.status_code < 400 and settings.REQUEST_ONLY_ERRORS:
             return response
         
-        allow = patterns(False, *settings.REQUEST_ALLOW_PATHS)
+        allow = patterns(True, *settings.REQUEST_ALLOW_PATHS)
         if not allow.resolve(request.path[1:]):
             return response
         
